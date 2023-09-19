@@ -4,9 +4,9 @@
   "manifest_version": 2,
   "name": "Écriture inclusive",
   "version": "1.0",
-  "homepage_url": "https://eninclusif.fr",
+  "homepage_url": "https://github.com/khalen56/webext-inclusif",
   "icons": {
-    "48": "icons/beasts-48.png"
+    "48": "icons/icon-48.png"
   },
   "permissions": [
     "activeTab",
