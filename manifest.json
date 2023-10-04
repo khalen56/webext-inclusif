@@ -3,7 +3,7 @@
   "description": "Soyez plus inclusif·ve grâce à l'extension écriture inclusive ! Celle-ci permet à ses utilisateur·rice·s de trouver facilement les déclinaisons inclusives des mots.",
   "manifest_version": 2,
   "name": "Écriture inclusive",
-  "version": "1.0",
+  "version": "1.0.1",
   "homepage_url": "https://github.com/khalen56/webext-inclusif",
   "icons": {
     "48": "icons/icon-48.png"
