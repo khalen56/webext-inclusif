@@ -3,9 +3,10 @@ window.addEventListener('contextmenu', e => {
     const sending = browser.runtime.sendMessage(
       {"name": "contextmenu", "data": getSelectionText()}
     ).then(response => {
-      let first = document.activeElement.value.slice(0, document.activeElement.selectionStart);
-      let rest = document.activeElement.value.slice(document.activeElement.selectionEnd, document.activeElement.value.length);
+      const first = document.activeElement.value.slice(0, document.activeElement.selectionStart);
+      const rest = document.activeElement.value.slice(document.activeElement.selectionEnd, document.activeElement.value.length);
 
+      document.execCommand('selectAll');
       document.execCommand('insertText', false, first + response.replace + rest);
 
       // Bonus: place cursor behind replacement
@@ -20,7 +21,7 @@ function getSelectionText() {
     const activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
     if (
       (activeElTagName == "textarea") || (activeElTagName == "input" &&
-      /^(?:text|search|password|tel|url)$/i.test(activeEl.type)) &&
+      /^(?:text)$/i.test(activeEl.type)) &&
       (typeof activeEl.selectionStart == "number")
     ) {
         text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
